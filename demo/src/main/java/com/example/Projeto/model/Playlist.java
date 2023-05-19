@@ -1,21 +1,22 @@
 package com.example.Projeto.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import java.util.List;
+import java.time.LocalDate;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 
-public class User {
-  
-  private Long id;
-  private String name;
-  private String username;
-  private List<Playlist> playlists;
-
+public class Playlist {
+    
+        private Long id;
+        private String nome;
+        private LocalDate data;
+        private User user;
 }
