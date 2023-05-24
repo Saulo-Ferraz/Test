@@ -11,21 +11,23 @@ import jakarta.persistence.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 
 public class User {
 		
-		@Id
-		@GeneratedValue(strategy = GenerationType.IDENTITY)
-		private Long id;
-		private String name;
-		private String username;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	private String name;
+	private String username;
+	private String password;
 		
 		
-		@OneToMany(mappedBy = "User")
-		private List<Playlist> playlists;
+	@OneToMany(mappedBy = "User")
+	private List<Playlist> playlists;
 		
-		@OneToMany(mappedBy = "User")
-		private List<Post> posts;
+	@OneToMany(mappedBy = "User")
+	private List<Post> posts;
 		
 
 }
