@@ -28,6 +28,11 @@ public class User {
 		
 	@OneToMany(mappedBy = "User")
 	private List<Post> posts;
+
+	public Long getId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 		
 
 }
