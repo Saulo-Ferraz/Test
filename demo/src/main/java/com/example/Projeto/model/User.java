@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.util.List;
+import jakarta.persistence.*;
 
 @Getter
 @Setter
@@ -12,10 +13,19 @@ import java.util.List;
 @NoArgsConstructor
 
 public class User {
-  
-  private Long id;
-  private String name;
-  private String username;
-  private List<Playlist> playlists;
+		
+		@Id
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
+		private Long id;
+		private String name;
+		private String username;
+		
+		
+		@OneToMany(mappedBy = "User")
+		private List<Playlist> playlists;
+		
+		@OneToMany(mappedBy = "User")
+		private List<Post> posts;
+		
 
 }

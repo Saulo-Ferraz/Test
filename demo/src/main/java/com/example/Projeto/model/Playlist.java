@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.time.LocalDate;
+import jakarta.persistence.*;
 
 @Getter
 @Setter
@@ -14,9 +15,14 @@ import java.time.LocalDate;
 @Data
 
 public class Playlist {
-    
+		
+		@Id
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
         private String nome;
         private LocalDate data;
+        
+        @ManyToOne
+        @JoinColumn(name = "user_id")
         private User user;
 }
