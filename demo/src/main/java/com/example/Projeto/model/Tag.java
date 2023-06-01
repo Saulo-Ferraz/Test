@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import java.util.List;
 import jakarta.persistence.*;
 
 @Getter
@@ -13,26 +12,14 @@ import jakarta.persistence.*;
 @NoArgsConstructor
 @Entity
 
-public class User {
-		
+public class Tag {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
-	private String username;
-	private String password;
-		
+	private String category;
 	
-	@OneToMany(mappedBy = "User")
-	private List<Playlist> playlists;
-	
-	@OneToMany(mappedBy = "User")
-	private List<Post> posts;
-
-	public Long getId() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-		
-
+	@ManyToOne
+    @JoinColumn(name = "post_id")
+    private Post post;
 }

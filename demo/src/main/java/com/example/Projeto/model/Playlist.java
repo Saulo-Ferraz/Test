@@ -19,8 +19,8 @@ public class Playlist {
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
-        private String nome;
-        private LocalDate data;
+        private String name;
+        private LocalDate date;
         
         @ManyToOne
         @JoinColumn(name = "user_id")

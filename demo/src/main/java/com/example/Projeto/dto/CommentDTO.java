@@ -8,9 +8,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class PlaylistDTO {
-	private Long id;
-	private String nome;
-	private LocalDate data;
+public class CommentDTO {
+	private String text;
 	private User user;
+	private LocalDate date;
+
 }
